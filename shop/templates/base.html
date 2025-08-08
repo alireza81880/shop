@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}base{% endblock %}</title>
+</head>
+<body>
+    {% block body %} {% endblock body %}
+    <hr />
+    <ul>
+        <li><a href="{% url 'website:index' %}">website</a></li>
+        <li><a href="{% url 'shop:index' %}">Index</a></li>
+        <li><a href="{% url 'shop:store' %}">store</a></li>
+        <li><a href="{% url 'shop:product' %}">product</a></li>
+        <li><a href="{% url 'shop:checkout' %}">checkout</a></li>
+    </ul>
+</body>
+</html>
