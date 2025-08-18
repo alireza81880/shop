@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Category(models.Model):
     title=models.CharField(max_length=100)
+    def __str__(self):
+        return self.title
 
 
 class Product(models.Model):
@@ -15,7 +17,10 @@ class Product(models.Model):
     quantity=models.PositiveBigIntegerField()
     status=models.BooleanField(default=True)
     create_at=models.DateField(auto_now_add=True)
-    category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True)
+    def __str__(self):
+        return self.title
+
 
 
 class Cart(models.Model):
